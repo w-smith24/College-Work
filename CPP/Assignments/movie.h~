@@ -1,0 +1,29 @@
+/* Wayne Smith
+Assingment 4 movie class
+This class will define a movie
+*/
+
+#include<iostream>
+#include"media.h"
+#include<cstring>
+using namespace std;
+
+class movie : public media
+{
+ private:
+  char rating[3];
+ public:
+ movie() : media()
+    {
+      rating = "G";
+    }
+ movie(char sname[], float p, char rat[]) : media(p, rat)
+    {
+      strcpy(rating, rat);
+    }
+  void print()
+  {
+    cout << "\nMovie" << endl;
+    media::print();
+    cout << "Rating is " << rating << endl;
+  }

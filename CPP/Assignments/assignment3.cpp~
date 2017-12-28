@@ -1,0 +1,37 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void refrandom(int*, int*, int*);
+void pointfill(int, char, int*);
+
+int main ()
+{
+  int a, b, c;
+  char cstr1[30], cstr2[30], cstr3[30];
+  refrandom(&a, &b &c);
+  cout << a << b << c<< endl;
+  pointfill(a, '@', cstr1);
+  pointfill(a, '~', cstr2);
+  pointfill(a, ';', cstr3);
+  cout << cstr1 << endl << cstr2 << endl << cstr3 << endl;
+  
+}
+
+void refrandom(int* x, int* y, int* z)
+{
+  *x = rand() % 30 + 1;
+  *y = rand() % 30 + 1;
+  *z = rand() % 30 + 1;  
+}
+
+void pointfill(int x, char ch, int* str)
+{
+  int i = 0;
+  while(i < x)
+    {
+      *(str + i) = ch;
+      i++
+    }
+  *(str + i) = '\0';  
+}
